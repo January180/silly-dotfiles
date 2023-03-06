@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# bspwm directory
+DIR="$HOME/.config/bspwm"
+
+#if [ "$1" == "h" ]; then
+#polybar-msg cmd hide && bspc config -m focused bottom_padding $((`bspc config -m focused bottom_padding` - 57 )) &
+#elif [ "$1" == "s" ]; then
+#polybar-msg cmd show && bspc config -m focused bottom_padding $((`bspc config -m focused bottom_padding` + 5 ))
+#fi
+
+TOGGLE=$HOME/.toggle
+
+if [ ! -e $TOGGLE ]; then
+    touch $TOGGLE
+    polybar-msg cmd hide &
+ffplay -nodisp -autoexit /home/asakusa/Desktop/ps5sounds/ps5v2/Back.wav &     
+else
+    rm $TOGGLE
+    polybar-msg cmd show &
+    ffplay -nodisp -autoexit /home/asakusa/Desktop/ps5sounds/PS5/Select.wav &     
+fi

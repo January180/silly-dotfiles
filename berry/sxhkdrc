@@ -1,0 +1,95 @@
+
+##---------- Keybindings for berry ----------##
+
+# Terminal (alacritty)
+super + Return
+	bash ~/.config/berry/bin/berryterm.sh
+
+# Terminal (floating)
+super + shift + Return
+	bash ~/.config/berry/bin/berryterm.sh --full
+
+##---------- Rofi Launcher & Menus ----------##
+
+# Rofi App Launcher
+alt + F1
+	bash ~/.config/berry/bin/launcher
+
+
+##---------- Applications ----------##
+
+# Launch Apps
+super + {f,w,e}
+	{thunar,firefox,geany}
+
+# Terminal Apps
+ctrl + alt + {v,r,h}
+	alacritty --config-file ~/.config/berry/alacritty/alacritty.yml -e {vim,ranger,htop}
+
+# Lockscreen
+ctrl + alt + l
+    betterlockscreen --lock
+
+##---------- System Keys ----------##
+
+# Take a screenshot
+super + s
+	~/.config/berry/bin/berryscreenshot.sh --now
+	
+# Reload sxhkd configuration file
+super + Escape
+	pkill -USR1 -x sxhkd
+
+##---------- Berry Hotkeys --------##
+
+super + shift +  {Left, Down, Up, Right}
+    berryc window_resize {-50 0, 0 50, 0 -50, 50 0}
+
+super + ctrl + {Left, Down, Up, Right}
+    berryc window_move {-50 0, 0 50, 0 -50, 50 0}
+
+super + Left
+    berryc snap_left
+
+super +  Right
+    berryc snap_right
+
+super +  Up
+    berryc window_monocle
+
+super +  Down
+    berryc window_resize_absolute 1000 650 && berryc window_center
+
+super + {1-9}
+    berryc switch_workspace {0-9}
+
+super + shift + {1-9}
+    berryc send_to_workspace {0-9}
+
+super + space
+    berryc fullscreen
+
+super + t
+    berryc toggle_decorations
+
+super + Tab
+    berryc cycle_focus
+
+alt + Tab
+    berryc cycle_focus
+
+super + c
+    berryc window_center
+
+super + q
+    berryc window_close
+
+super + shift + c
+    berryc window_close
+
+super + shift + q
+    berryc quit
+
+# Mouse Buttons
+~button1
+    berryc pointer_focus
