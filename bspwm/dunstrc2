@@ -10,8 +10,8 @@ monitor = 0
 follow = mouse
 width = 300
 height = 300
-origin = bottom-center
-offset = 0x77
+origin = bottom-right
+offset = 63x77
 indicate_hidden = yes
 shrink = yes
 
@@ -22,12 +22,11 @@ horizontal_padding = 11
 frame_width = 6
 frame_color = "#0f0f0f"
 separator_color = "#3c5bb6"
-
-font = Terminus
+font = "Noto Sans JP Medium 10"
 
 line_height = 0
 markup = full
-format = "<span size='x-large' font_desc='Terminus' weight='bold' foreground='#f9f9f9'>%s</span>\n%b"
+format = "<span size='x-large' font_desc='Sarasa Mono CL 9' weight='Bold' foreground='#c49ec4'>%s</span>\n%b"
 alignment = center
 
 idle_threshold = 120
@@ -47,7 +46,7 @@ max_icon_size = 80
 
 icon_path = /usr/share/icons/Papirus-Dark/48x48/actions/:/usr/share/icons/Papirus-Dark/48x48/apps/:/usr/share/icons/Papirus-Dark/48x48/devices/:/usr/share/icons/Papirus-Dark/48x48/emblems/:/usr/share/icons/Papirus-Dark/48x48/emotes/:/usr/share/icons/Papirus-Dark/48x48/mimetypes/:/usr/share/icons/Papirus-Dark/48x48/places/:/usr/share/icons/Papirus-Dark/48x48/status/
 
-browser = firefox
+browser = /usr/bin/firefox
 
 mouse_left_click = close_current
 mouse_middle_click = do_action
@@ -57,6 +56,7 @@ mouse_right_click = close_all
 timeout = 3
 background = "#0f0f0f"
 foreground = "#f9f9f9"
+highlight = "#c49ec4"
 
 [urgency_normal]
 timeout = 6

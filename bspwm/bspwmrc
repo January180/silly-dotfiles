@@ -86,11 +86,17 @@ xsetroot -cursor_name left_ptr &
 bspcomp &
 bspbar &
 bspdunst &
+
+if xinput | grep Air; then
+ pkill easyeffects
+else
 easyeffects --gapplication-service &
+fi
+
 sleep 0.8
-ffplay -nodisp -autoexit Downloads/sony_psp_boot_sound-640521.mp3 &
+ffplay -nodisp -autoexit $BSPDIR/sounds/sony_psp_boot_sound-640521.mp3 &
 sleep 4
-ffplay -nodisp -autoexit /home/asakusa/Downloads/sony_psp_umd_boot_sound-640520.mp3 &
+ffplay -nodisp -autoexit $BSPDIR/sounds/sony_psp_umd_boot_sound-640520.mp3 &
 dunstify -u low -h string: "Welcome back, asakusa"
 ;
 ; ██▓    ▄▄▄       ██▀███   ██▀███ ▓██   ██▓▓█████  ██▓  ▄████  ██░ ██ ▄▄▄█████▓▓██   ██▓
